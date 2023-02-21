@@ -746,7 +746,7 @@ class nisqaModel(object):
         files = glob( os.path.join(self.args['data_dir'], 
             f"{self.args['prefix']}*.wav" if self.args['prefix'] is not None else '*.wav') )
         files = [os.path.basename(files) for files in files]
-        df_val = pd.DataFrame(files, columns=['deg'])
+        df_val = pd.DataFrame(files[:self.args['max_files']] if self.args['max_files'] is not None else files, columns=['deg'])
      
         print('# files: {}'.format( len(df_val) ))
         if len(df_val)==0:
