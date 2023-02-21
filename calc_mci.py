@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import scipy.stats
 from argparse import ArgumentParser
 
 def mean_confidence_interval(data, confidence=0.95):
