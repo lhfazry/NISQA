@@ -10,6 +10,7 @@ parser.add_argument('--mode', required=True, type=str, help='either predict_file
 parser.add_argument('--pretrained_model', required=True, type=str, help='file name of pretrained model (must be in current working folder)')
 parser.add_argument('--deg', type=str, help='path to speech file')
 parser.add_argument('--data_dir', type=str, help='folder with speech files')
+parser.add_argument('--prefix', type=str, help='prefix')
 parser.add_argument('--output_dir', type=str, help='folder to ouput results.csv')
 parser.add_argument('--csv_file', type=str, help='file name of csv (must be in current working folder)')
 parser.add_argument('--csv_deg', type=str, help='column in csv with files name/path')

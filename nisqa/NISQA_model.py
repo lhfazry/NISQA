@@ -743,7 +743,8 @@ class nisqaModel(object):
             
     
     def _loadDatasetsFolder(self):
-        files = glob( os.path.join(self.args['data_dir'], '*.wav') )
+        files = glob( os.path.join(self.args['data_dir'], 
+            f"{args.prefix}*.wav" if self.args['prefix'] is not None else '*.wav') )
         files = [os.path.basename(files) for files in files]
         df_val = pd.DataFrame(files, columns=['deg'])
      
