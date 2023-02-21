@@ -17,7 +17,7 @@ def main(args):
     mos_preds = df['mos_pred'].to_numpy()
     m_mos = mean_confidence_interval(mos_preds)
 
-    print(f"MOS: {m_mcd[0]} \u00b1 {m_mcd[1]}")
+    print(f"MOS: {m_mos[0]} \u00b1 {m_mos[1]}")
 
 if __name__ == '__main__':
     parser = ArgumentParser(description='Calculate MOS')
