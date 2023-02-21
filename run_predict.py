@@ -4,6 +4,7 @@
 """
 from nisqa.NISQA_model import nisqaModel
 import argparse
+from calc_mci import mean_confidence_interval
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', required=True, type=str, help='either predict_file, predict_dir, or predict_csv')
@@ -41,7 +42,14 @@ args['tr_num_workers'] = args['num_workers']
     
 if __name__ == "__main__":
     nisqa = nisqaModel(args)
-    nisqa.predict()
+    df = nisqa.predict()
+
+    mos_preds = df['mos_pred'].to_numpy()
+    m_mos = mean_confidence_interval(mos_preds)
+
+    print(f"MOS: {m_mos[0]} \u00b1 {m_mos[1]}")
+
+
 
 
 
