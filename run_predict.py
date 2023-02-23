@@ -14,6 +14,7 @@ parser.add_argument('--data_dir', type=str, help='folder with speech files')
 parser.add_argument('--prefix', type=str, help='prefix')
 parser.add_argument('--max_files', type=int, help='max_files')
 parser.add_argument('--output_dir', type=str, help='folder to ouput results.csv')
+parser.add_argument('--filename', type=str, help='filename to ouput results.csv')
 parser.add_argument('--csv_file', type=str, help='file name of csv (must be in current working folder)')
 parser.add_argument('--csv_deg', type=str, help='column in csv with files name/path')
 parser.add_argument('--num_workers', type=int, default=0, help='number of workers for pytorchs dataloader')
@@ -49,6 +50,8 @@ if __name__ == "__main__":
     m_mos = mean_confidence_interval(mos_preds)
 
     print(f"MOS: {m_mos[0]} \u00b1 {m_mos[1]}")
+
+    df.to_csv(os.path.join(self.args['output_dir'], self.args['filename']), index=False)
 
 
 
