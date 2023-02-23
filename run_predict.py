@@ -4,6 +4,7 @@
 """
 from nisqa.NISQA_model import nisqaModel
 import argparse
+import os
 from calc_mci import mean_confidence_interval
 
 parser = argparse.ArgumentParser()
