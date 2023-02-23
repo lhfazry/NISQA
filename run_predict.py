@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     print(f"MOS: {m_mos[0]} \u00b1 {m_mos[1]}")
 
-    df.to_csv(os.path.join(self.args['output_dir'], self.args['filename']), index=False)
+    df.to_csv(os.path.join(args['output_dir'], args['filename']), index=False)
 
 
 
