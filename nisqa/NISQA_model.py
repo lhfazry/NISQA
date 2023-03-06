@@ -77,7 +77,7 @@ class nisqaModel(object):
                 os.path.join(self.args['output_dir'], 'NISQA_results.csv'), 
                 index=False)
             
-        print(self.ds_val.df.to_string(index=False))
+        #print(self.ds_val.df.to_string(index=False))
         return self.ds_val.df
 
     def _train_mos(self):
