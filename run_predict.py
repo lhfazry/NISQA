@@ -47,6 +47,7 @@ if __name__ == "__main__":
     nisqa = nisqaModel(args)
     df = nisqa.predict()
 
+    print(f"\n\n{args.data_dir} - {args.prefix}")
     mos_preds = df['mos_pred'].to_numpy()
     m_mos = mean_confidence_interval(mos_preds)
 
