@@ -44,13 +44,13 @@ args['tr_bs_val'] = args['bs']
 args['tr_num_workers'] = args['num_workers']
     
 if __name__ == "__main__":
-    print(f"\n\n{args['data_dir']} - {args['prefix']}")
     nisqa = nisqaModel(args)
     df = nisqa.predict()
 
     mos_preds = df['mos_pred'].to_numpy()
     m_mos = mean_confidence_interval(mos_preds)
 
+    print(f"\n\n{args['data_dir']} - {args['prefix']}")
     print(f"MOS: {m_mos[0]} \u00b1 {m_mos[1]}")
 
     df.to_csv(os.path.join(args['output_dir'], args['filename']), index=False)
