@@ -936,7 +936,7 @@ class nisqaModel(object):
                 model_path = os.path.join(self.args['pretrained_model'])
             else:
                 model_path = os.path.join(os.getcwd(), self.args['pretrained_model'])
-            checkpoint = torch.load(model_path, map_location=self.dev)
+            checkpoint = torch.load(model_path, map_location='cpu')
             
             # update checkpoint arguments with new arguments
             checkpoint['args'].update(self.args)
